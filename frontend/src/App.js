@@ -5,9 +5,13 @@ import Diaries from "./diaries/Diaries";
 import Header from "./header/Header";
 import Home from "./home/Home";
 
+
 function App() {
+  
+  
   return (
     <div>
+    
       <header>
         <Header />
       </header>
