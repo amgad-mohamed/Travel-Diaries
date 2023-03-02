@@ -24,18 +24,18 @@ const signup = async (req, res) => {
     return res.status(422).json({ message: "Invalid Data" });
   }
   const hashPassword = hashSync(password);
-  let user;
-  try {
-    user = new User({ email, name, password: hashPassword });
-    user.save();
-  } catch (err) {
-    return console.log(err);
-  }
-  if (!user) {
-    return res.status(500).json({ message: "Unexpected Error" });
-  }
-  return res.status(201).json({ user });
-};
+    let user;
+    try {
+      user = new User({ email, name, password: hashPassword });
+      user.save();
+    } catch (err) {
+      return console.log(err);
+    }
+    if (!user) {
+      return res.status(500).json({ message: "Unexpected Error" });
+    }
+    return res.status(201).json({ user });
+  };  
 
 const login = async (req, res, next) => {
   const { email, password } = req.body;
